@@ -1,0 +1,85 @@
+/* Deutsch Lernen — refreshed, learner-friendly visual design */
+:root{
+  --bg:#f7f8fc;
+  --ink:#18233b;
+  --muted:#68748b;
+  --primary:#5a45dc;
+  --primary2:#8a7bff;
+  --teal:#16b894;
+  --coral:#ff786e;
+  --line:#e6eaf3;
+  --shadow:0 18px 48px rgba(32,38,78,.075);
+}
+html{scroll-padding-top:88px}
+body{
+  background:
+    radial-gradient(ellipse at 8% 4%,rgba(119,101,255,.09),transparent 28rem),
+    radial-gradient(ellipse at 92% 20%,rgba(27,191,156,.07),transparent 25rem),
+    var(--bg);
+  color:var(--ink);
+  letter-spacing:-.01em;
+}
+::selection{background:#d9d2ff;color:#241b65}
+.wrap{width:min(1200px,calc(100% - 36px))}
+header{background:rgba(250,251,255,.88);border-bottom:1px solid rgba(226,231,243,.9);box-shadow:0 5px 24px rgba(31,41,78,.035)}
+.nav{height:78px}
+.brand{font-size:16px}
+.logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(145deg,#5a45dc,#9d8cff);box-shadow:0 9px 22px rgba(90,69,220,.25);font-size:15px}
+.links{gap:17px}
+.links a{transition:color .18s ease}
+.btn{border-radius:14px;background:linear-gradient(135deg,#6048e7,#8068f2);box-shadow:0 9px 20px rgba(90,69,220,.19);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 13px 26px rgba(90,69,220,.24);filter:none}
+.btn.ghost{background:#f0edff;border:1px solid #e4ddff}
+.hero{margin:28px 0 52px;padding:clamp(28px,5vw,62px);border-radius:32px;min-height:420px;background:linear-gradient(118deg,#211b58 0%,#4336a7 47%,#6a5ae4 76%,#8a7cf5 100%);box-shadow:0 24px 65px rgba(58,43,151,.19)}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 18%,rgba(255,255,255,.19),transparent 19rem),radial-gradient(circle at 16% 100%,rgba(23,205,163,.18),transparent 21rem);pointer-events:none}
+.hero:after{right:-120px;top:-190px;width:470px;height:470px;border-color:#ffffff20;box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff06}
+.hero>div:first-child{position:relative;z-index:1}
+.hero .pill{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.25);backdrop-filter:blur(8px);font-size:12px}
+.hero h1{font-size:clamp(39px,5.3vw,66px);line-height:1.12;letter-spacing:-2px;margin:23px 0 17px;text-wrap:balance}
+.hero p{font-size:clamp(16px,1.5vw,18px);line-height:1.9;color:#f0efff;max-width:600px}
+.heroactions{gap:12px;margin-top:30px}
+.hero .btn{background:#fff;color:#4836b7;box-shadow:0 10px 24px rgba(12,10,53,.14)}
+.hero .btn.ghost{background:rgba(255,255,255,.11);color:#fff;border-color:rgba(255,255,255,.3)}
+.heroart{min-height:280px}
+.studycard{border-radius:26px;width:min(290px,100%);padding:26px;transform:rotate(2.5deg);box-shadow:0 28px 65px rgba(11,9,51,.35);border:1px solid rgba(255,255,255,.65);animation:cardFloat 5.5s ease-in-out infinite}
+.studycard h3{font-size:29px;letter-spacing:-.7px}
+.studycard .tiny{color:#6651d9}
+.chips span{border-radius:999px;background:#f1efff;padding:8px 11px}
+.floatnote{border-radius:15px;box-shadow:0 14px 30px rgba(12,10,53,.19);backdrop-filter:blur(5px)}
+.floatnote.bottom{left:3%;bottom:0}
+.section{margin:64px 0}
+.sectionhead{margin-bottom:25px}
+.sectionhead h2{letter-spacing:-1.35px;line-height:1.25}
+.sectionhead p{max-width:760px}
+.levels,.lessons,.featuregrid,.pdfgrid{gap:20px}
+.level,.examcard,.pdfcard,.lesson,.feature,.examhero,.upgrade-panel{border-radius:23px;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.level,.pdfcard,.lesson{border-color:#e8eaf4}
+.level:hover,.pdfcard:hover,.lesson:hover,.examcard:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(32,38,78,.11);border-color:#d8d2ff}
+.level{padding:27px;background:linear-gradient(160deg,#fff 0%,#fff 75%,#faf9ff 100%)}
+.level h3{letter-spacing:-.6px}
+.level p{min-height:72px}
+.level a{display:inline-flex;align-items:center;gap:7px;padding:10px 13px;border-radius:12px;background:#f0edff;transition:background .18s ease}
+.level a:hover{background:#e5deff}
+.examhero{padding:clamp(20px,3vw,34px);border-color:#e8eaf4}
+.examcard{background:linear-gradient(150deg,#fff,#fbfbff);border-color:#e8eaf4}
+.examfoot button,.lesson button,.pdfcard a,.pdfcard button{border-radius:12px;transition:transform .16s ease,filter .16s ease}
+.examfoot button:hover,.lesson button:hover,.pdfcard a:hover,.pdfcard button:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.filter{border-radius:999px;padding:11px 16px;transition:background .16s ease,color .16s ease,border-color .16s ease}
+.filter.active{background:#27204f;border-color:#27204f}
+.upgrade-panel{box-shadow:0 22px 60px rgba(43,35,105,.09);border:1px solid #e7e5f6}
+.assessment-panel{border-top:6px solid #7257ed}
+.vocabulary-panel{border-top:6px solid #18b995}
+.voice-panel{border-top:6px solid #ff8278}
+.feature{background:linear-gradient(145deg,#e9fbf4,#f5fffb);border:1px solid #d9f5e9}
+.feature:nth-child(2){background:linear-gradient(145deg,#f1edff,#faf8ff);border-color:#e6ddff}
+.feature:nth-child(3){background:linear-gradient(145deg,#fff1e9,#fffaf6);border-color:#ffe5d5}
+.feature .icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:#fff;box-shadow:0 6px 16px rgba(30,40,70,.06);font-size:24px}
+.footer{margin-top:70px;background:#191d36;color:#f7f7ff;border-radius:30px 30px 0 0;padding:38px 0}
+.footer p,.footer a{color:#c7cbe0}
+.footer a:hover{color:#fff}
+input,textarea,select{max-width:100%;border-radius:12px}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #a69aff;outline-offset:3px}
+@keyframes cardFloat{0%,100%{transform:rotate(2.5deg) translateY(0)}50%{transform:rotate(1deg) translateY(-7px)}}
+@media(max-width:850px){.hero{margin-top:20px;padding:32px 25px;border-radius:25px}.hero h1{letter-spacing:-1.2px}.heroart{display:none}.section{margin:48px 0}.level p{min-height:0}}
+@media(max-width:600px){.wrap{width:min(100% - 24px,1200px)}.nav{height:68px}.logo{width:40px;height:40px;border-radius:13px}.hero{padding:27px 21px;min-height:0}.hero h1{font-size:39px;line-height:1.18}.hero p{font-size:16px}.heroactions{display:grid;grid-template-columns:1fr}.heroactions .btn{width:100%;text-align:center}.sectionhead h2{font-size:29px}.level,.pdfcard,.lesson{padding:20px}.examhero{padding:16px}.upgrade-panel{padding:17px}.footer{border-radius:23px 23px 0 0;padding:30px 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
