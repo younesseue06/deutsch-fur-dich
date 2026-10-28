@@ -1,0 +1,10 @@
+# Local editor/system files
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+node_modules/
+.netlify/
+private-pdfs/
+dist/

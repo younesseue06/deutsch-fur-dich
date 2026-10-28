@@ -1,0 +1,15 @@
+{
+  "name": "deutsch-lernen-seo-social-auth-v9",
+  "version": "9.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:seo": "python3 tools/check_seo.py"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2"
+  }
+}

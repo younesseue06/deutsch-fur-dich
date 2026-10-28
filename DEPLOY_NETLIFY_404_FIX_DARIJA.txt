@@ -1,0 +1,18 @@
+حل خطأ 404 في Netlify — Deutsch Lernen V7
+
+سبب الخطأ غالباً:
+ملف index.html موجود داخل public/، وNetlify خاصو ينشر public/ باعتباره Publish directory. ما ترفعش أرشيف ALL_IN_ONE كامل باستعمال Deploy manually.
+
+طريقة النشر الصحيحة للمشروع كامل (بما فيها وظيفة التحميل المحمي):
+1) فك الضغط على Deutsch_Lernen_V7_NETLIFY_ROOT_FIX.zip.
+2) غادي تلقى netlify.toml وpackage.json وpublic/ وnetlify/functions/ فالجذر نفسه.
+3) ارفع محتويات هاد المجلد إلى GitHub Private repository (ما تستعملش Public repository حيث المشروع فيه ملفات PDFs الأصلية داخل private-pdfs).
+4) فـ Netlify اختار Add new site > Import an existing project، واربط المستودع.
+5) خَلّي Base directory فارغ (أو نفس جذر المستودع). netlify.toml كيعين Build command وPublish directory=public وFunctions directory=netlify/functions.
+6) من Site configuration > Environment variables زيد SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_SECRET_KEY, SUPABASE_PRIVATE_BUCKET. متحطش secret key داخل public/config.js.
+7) رفع PDFs إلى Supabase Storage bucket خاص private-course-pdfs بنفس الأسماء: a1_diaa_abdullah.pdf, a2_diaa_abdullah.pdf, b1_diaa_abdullah.pdf.
+8) دير Deploy، ومن بعد جرّب https://YOUR-SITE/ و https://YOUR-SITE/sitemap.xml.
+
+مهم: إلا رفعت غير public/ بطريقة Deploy manually، الصفحة الرئيسية والصفحات الثابتة يمكن يخدمو، ولكن Netlify Functions وتسجيل الدخول/تنزيل PDF المحمي ما غاديش يخدمو بهاد الطريقة. استعمل Git-connected deploy للمشروع الكامل.
+
+من بعد النشر، إذا بقى 404: افتح Deploys > آخر deployment > Deploy log، وتأكد أن publish directory هي public وأن build نجح.
