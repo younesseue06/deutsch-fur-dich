@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /.netlify/functions/
-Sitemap: https://deutsch-yn.netlify.app/sitemap.xml
